@@ -231,6 +231,7 @@ public class Main extends JFrame {
 		comboBox_1.addItem("psi");
 		comboBox_1.addItem("Bar");
 		comboBox_1.addItem("mm");
+		comboBox_1.addItem("Ton");
 		contentPane.add(comboBox_1);
 		
 		JLabel lblSelectUnit = new JLabel("Select Unit");
@@ -485,7 +486,7 @@ public class Main extends JFrame {
 					{"Mfg. Sl. No", sno},
 					{"Atm. Press", "1004 mb"}
 			};
-			doc.setMargins(70, 70, 120, 50);
+			doc.setMargins(70, 70, 170, 50);
 			doc.open();
 			doc.setMargins(0, 50, 50, 10);
 			PdfPTable t1 = new PdfPTable(new float[] {4, 7, 4, 7});
@@ -659,19 +660,15 @@ public class Main extends JFrame {
 			
 			String[] t4L = {
 					"",
-					"To Calculate Pressure 'P'  use the following equation:",
-					"Linear P = G(R0 - R1)+k(T1-T0)-(S1-S0)",
+					"To Calculate Crack \"C\" use the following equation",
+					"Linear C(mm) = G(R0 - R1)",
 					"R1= Current reading in digit during observation.",
-					"User is advised to establish zero conditions at known temperature & atmospheric pressure.",
 					"",
 					"Digit=Freq²/1000 also called LU (Linear Unit).",
 					"R0=Reading at zero pressure in LU.",
 					"R1= Current reading in LU during observation.",
-					"k= Thermal factor in " + unit + "/°C.",
 					"T0 = Temp at the time of taking zero reading.",
 					"T1 = Temp during observation.",
-					"S0= atmospheric pressure at the time of taking zero reading",
-					"S1= Atmospheric pressure during observation.",
 					"",
 					"Red\t=\tSENSOR+\tGreen\t=\tThermistor",
 					"Black\t=\tSENSOR-\tWhite\t=\tThermistor\tBare\t=\tSHIELD"
