@@ -119,6 +119,8 @@ public class Main extends JFrame {
 		comboBox.addItem("5 to 35");
 		comboBox.addItem("1");
 		comboBox.addItem("35");
+		comboBox.addItem("100");
+		comboBox.addItem("150");
 		contentPane.add(comboBox);
 		separator.setBounds(0, 95, 684, 8);
 		contentPane.add(separator);
@@ -397,6 +399,14 @@ public class Main extends JFrame {
 		} else if (selection == 9) {
 			maxLoad = 35.0f;
 			difference = 7.0f;
+			num = 5;
+		} else if (selection == 10) {
+			maxLoad = 100.0f;
+			difference = 20.0f;
+			num = 5;
+		} else if (selection == 11) {
+			maxLoad = 150.0f;
+			difference = 30.0f;
 			num = 5;
 		}
 
