@@ -130,6 +130,7 @@ public class Main extends JFrame {
 		comboBox.addItem("150");
 		comboBox.addItem("2");
 		comboBox.addItem("500");
+		comboBox.addItem("4");
 		contentPane.add(comboBox);
 		separator.setBounds(3, 115, 692, 7);
 		contentPane.add(separator);
@@ -443,6 +444,10 @@ public class Main extends JFrame {
 			maxLoad = 500.0f;
 			difference = 100.0f;
 			num = 5;
+		} else if (selection == 14) {
+			maxLoad = 4.0f;
+			difference = 0.8f;
+			num = 5;
 		}
 
 		model.setRowCount(num + 2);
@@ -527,7 +532,7 @@ public class Main extends JFrame {
 					{"Instrument", instrument},
 					{"Date", date},
 					{"Range", range},
-					{"R.Temp", "23° C"},
+					{"R.Temp", "23ï¿½ C"},
 					{"Mfg. Sl. No", sno},
 					{"Atm. Press", "1004 mb"}
 			};
@@ -584,7 +589,7 @@ public class Main extends JFrame {
 			
 			String[] t2L = {
 					"Pressure",
-					"O/P DIGIT (f²/1000)",
+					"O/P DIGIT (fï¿½/1000)",
 					"End Point",
 //					"Polyfit",
 					"End Point",
@@ -680,7 +685,7 @@ public class Main extends JFrame {
 			p = new PdfPCell(new Phrase("THERMAL "));
 			p.setBorder(Rectangle.LEFT|Rectangle.TOP|Rectangle.BOTTOM);
 			t4.addCell(p);
-			p = new PdfPCell(new Phrase("(K) = " + String.valueOf(format.format(0.000126)) + " " + unit + "° C"));
+			p = new PdfPCell(new Phrase("(K) = " + String.valueOf(format.format(0.000126)) + " " + unit + "ï¿½ C"));
 			p.setBorder(Rectangle.TOP|Rectangle.RIGHT|Rectangle.BOTTOM);
 			t4.addCell(p);
 			
@@ -709,7 +714,7 @@ public class Main extends JFrame {
 					"Linear C(mm) = G(R0 - R1)",
 					"R1= Current reading in digit during observation.",
 					"",
-					"Digit=Freq²/1000 also called LU (Linear Unit).",
+					"Digit=Freqï¿½/1000 also called LU (Linear Unit).",
 					"R0=Reading at zero pressure in LU.",
 					"R1= Current reading in LU during observation.",
 					"T0 = Temp at the time of taking zero reading.",
