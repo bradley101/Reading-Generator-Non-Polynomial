@@ -1,7 +1,6 @@
 package com.bradley.readinggenerator;
 
-import java.awt.Event;
-import java.awt.EventQueue;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
@@ -10,6 +9,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.util.Vector;
 import java.util.concurrent.ThreadLocalRandom;
@@ -132,6 +132,7 @@ public class Main extends JFrame {
 		comboBox.addItem("500");
 		comboBox.addItem("4");
 		comboBox.addItem("400");
+		comboBox.addItem("20");
 		contentPane.add(comboBox);
 		separator.setBounds(3, 115, 692, 7);
 		contentPane.add(separator);
@@ -273,6 +274,7 @@ public class Main extends JFrame {
 		});
 
 		KeyStroke saveShortcut = KeyStroke.getKeyStroke(KeyEvent.VK_S, Event.CTRL_MASK);
+//		KeyStroke saveShortcut2 = KeyStroke.getKeyStroke(KeyEvent.VK_S, AWTKeyStroke.)
 		AbstractAction saveAction = new AbstractAction() {
 			
 			@Override
@@ -303,8 +305,10 @@ public class Main extends JFrame {
 				saveToTemplate();
 				try {
 					if (autoIncCheckBox.isSelected()) {
-						textField_1.setText(String.valueOf(Integer.valueOf(textField_1.getText()) + 1));
+						BigInteger serialNo = new BigInteger(textField_1.getText());
+						textField_1.setText(serialNo.add(BigInteger.ONE).toString());
 						textField_2.requestFocus();
+						System.out.println(Long.MAX_VALUE);
 					} else {
 						textField_1.requestFocus();
 					}
@@ -452,6 +456,10 @@ public class Main extends JFrame {
 		} else if (selection == 15) {
 			maxLoad = 400.0f;
 			difference = 80.0f;
+			num = 5;
+		} else if (selection == 16) {
+			maxLoad = 20.0f;
+			difference = 4.0f;
 			num = 5;
 		}
 

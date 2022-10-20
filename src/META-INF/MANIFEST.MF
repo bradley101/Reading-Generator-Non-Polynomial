@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: com.bradley.readinggenerator.Main
+Class-Path: itext-4.2.1.jar commons-collections4-4.1.jar commons-math3-3
+ .3.jar
+
